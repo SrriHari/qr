@@ -9,7 +9,7 @@ a.use(express.urlencoded({extended:true}));
 a.use(express.static("public"));
 
 a.get("/",(req,res) => {
-    res.render("main.ejs");
+    res.render("../views/main.ejs");
     
 });
 
@@ -23,7 +23,7 @@ a.post("/s",(req,res) => {
     const b = req.body["r"];
     var qr_svg = srri.image(b);
     qr_svg.pipe(fs.createWriteStream('public/j.jpg'))
-    res.render("index.ejs");
+    res.render("../views/index.ejs");
 });
 
 a.listen(3000,() => {
